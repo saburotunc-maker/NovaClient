@@ -8,3 +8,4 @@ public class ExampleMod implements ModInitializer {
         ClientInput.register();
     }
 }
+
