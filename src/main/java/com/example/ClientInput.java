@@ -1,15 +1,17 @@
 package com.example;
 
+import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
 
-public class ClientInput {
+public class ClientInput implements ClientModInitializer {
     public static KeyBinding openGuiKey;
 
-    public static void register() {
+    @Override
+    public void onInitializeClient() {
         openGuiKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
             "key.novaclient.open_gui",
             InputUtil.Type.KEYSYM,
@@ -25,5 +27,8 @@ public class ClientInput {
             }
         });
     }
-}
 
+    public static void register() {
+        // Main initialization placeholder
+    }
+}
