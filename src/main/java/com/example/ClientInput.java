@@ -29,6 +29,5 @@ public class ClientInput implements ClientModInitializer {
     }
 
     public static void register() {
-        // Main initialization placeholder
     }
 }
